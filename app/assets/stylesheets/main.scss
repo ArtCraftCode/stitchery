@@ -29,3 +29,20 @@
   color: #1EAEDB;
   font-weight: 700;
 }
+
+.icon-list {
+  i {
+    padding-left: 20px;
+  }
+}
+
+.fraction-display {
+  .fraction {
+    font-size: 0.95rem;
+    vertical-align: super;
+  }
+  .float {
+    font-size: 0.95rem;
+    vertical-align: sub;
+  }
+}

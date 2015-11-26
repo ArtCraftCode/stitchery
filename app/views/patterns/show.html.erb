@@ -1,24 +1,62 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<h2>
   <%= @pattern.name %>
-</p>
+  <div class="u-pull-right icon-list">
+    <% if @pattern.digital %>
+      <i class="fa fa-files-o"></i>
+    <% end %>
+    <% if @pattern.cut %>
+      <i class="fa fa-scissors"></i>
+    <% end %>
+    <%= link_to edit_pattern_path(@pattern) do %>
+      <i class="fa fa-pencil"></i>
+    <% end %>
+  </div>
+</h2>
 
 <p>
-  <strong>Digital:</strong>
-  <%= @pattern.digital %>
+  <em>
+    <%= @pattern.category %>
+  </em>
 </p>
 
-<p>
-  <strong>Cut:</strong>
-  <%= @pattern.cut %>
-</p>
+<h4>Variants</h4>
+<table class="u-full-width">
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>44"</th>
+      <th>54"</th>
+      <th>60"</th>
+      <th>Bust</th>
+      <th>Waist</th>
+      <th>Hips</th>
+      <th colspan="2">Actions</th>
+    </tr>
+  </thead>
 
-<p>
-  <strong>Type:</strong>
-  <%= @pattern.type %>
-</p>
-
-<%= link_to 'Edit', edit_pattern_path(@pattern) %> |
-<%= link_to 'Back', patterns_path %>
+    <tbody>
+    <% @pattern.variants.each do |variant| %>
+      <tr>
+        <td><%= variant.size %></td>
+        <td><%= pretty(variant.yardage_44).html_safe %></td>
+        <td><%= pretty(variant.yardage_54).html_safe %></td>
+        <td><%= pretty(variant.yardage_60).html_safe %></td>
+        <td><%= pretty(variant.bust).html_safe %></td>
+        <td><%= pretty(variant.waist).html_safe %></td>
+        <td><%= pretty(variant.hips).html_safe %></td>
+        <td>
+          <%= link_to edit_variant_path(variant) do %>
+            <i class="fa fa-pencil"></i>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to variant, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <i class="fa fa-trash"></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
