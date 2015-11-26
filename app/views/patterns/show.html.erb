@@ -35,42 +35,47 @@
   </div>
 <% end %>
 
-<h4>Variants</h4>
-<table class="u-full-width">
-  <thead>
-    <tr>
-      <th>Label</th>
-      <th>44"</th>
-      <th>54"</th>
-      <th>60"</th>
-      <th>Bust</th>
-      <th>Waist</th>
-      <th>Hips</th>
-      <th colspan="2">Actions</th>
-    </tr>
-  </thead>
+<% if @pattern.variants %> 
+  <div class="divider">
+    <h3>Variants</h3>
+  </div>
 
-    <tbody>
-    <% @pattern.variants.each do |variant| %>
+  <table class="u-full-width">
+    <thead>
       <tr>
-        <td><%= variant.size %></td>
-        <td><%= pretty(variant.yardage_44).html_safe %></td>
-        <td><%= pretty(variant.yardage_54).html_safe %></td>
-        <td><%= pretty(variant.yardage_60).html_safe %></td>
-        <td><%= pretty(variant.bust).html_safe %></td>
-        <td><%= pretty(variant.waist).html_safe %></td>
-        <td><%= pretty(variant.hips).html_safe %></td>
-        <td>
-          <%= link_to edit_variant_path(variant) do %>
-            <i class="fa fa-pencil"></i>
-          <% end %>
-        </td>
-        <td>
-          <%= link_to variant, method: :delete, data: { confirm: 'Are you sure?' } do %>
-            <i class="fa fa-trash"></i>
-          <% end %>
-        </td>
+        <th>Label</th>
+        <th>44"</th>
+        <th>54"</th>
+        <th>60"</th>
+        <th>Bust</th>
+        <th>Waist</th>
+        <th>Hips</th>
+        <th colspan="2">Actions</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+      <tbody>
+      <% @pattern.variants.each do |variant| %>
+        <tr>
+          <td><%= variant.size %></td>
+          <td><%= pretty(variant.yardage_44).html_safe %></td>
+          <td><%= pretty(variant.yardage_54).html_safe %></td>
+          <td><%= pretty(variant.yardage_60).html_safe %></td>
+          <td><%= pretty(variant.bust).html_safe %></td>
+          <td><%= pretty(variant.waist).html_safe %></td>
+          <td><%= pretty(variant.hips).html_safe %></td>
+          <td>
+            <%= link_to edit_variant_path(variant) do %>
+              <i class="fa fa-pencil"></i>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to variant, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <i class="fa fa-trash"></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
