@@ -21,6 +21,20 @@
   </em>
 </p>
 
+<% if @pattern.fabrics %>
+  <div class="divider">
+    <h3>Fabrics</h3>
+    <p><%= @pattern.fabrics %></p>
+  </div>
+<% end %> 
+
+<% if @pattern.notions %>
+  <div class="divider">
+    <h3>Notions</h3>
+    <p><%= @pattern.notions %></p>
+  </div>
+<% end %>
+
 <h4>Variants</h4>
 <table class="u-full-width">
   <thead>
