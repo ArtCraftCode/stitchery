@@ -69,6 +69,6 @@ class PatternsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pattern_params
-      params.require(:pattern).permit(:name, :digital, :cut, :category)
+      params.require(:pattern).permit(:name, :digital, :cut, :category, :notions, :fabrics)
     end
 end
