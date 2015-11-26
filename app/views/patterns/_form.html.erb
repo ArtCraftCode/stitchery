@@ -11,23 +11,50 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="row">
+    <div class="twelve columns divider">
+      <h3>Pattern Information</h3>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :digital %><br>
-    <%= f.check_box :digital %>
+  <div class="row">
+    <div class="twelve columns">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :cut %><br>
-    <%= f.check_box :cut %>
+
+  <div class="row">
+    <div class="twelve columns divider">
+      <h3>Inventory</h3>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :type %><br>
-    <%= f.text_field :type %>
+  <div class="row">
+    <div class="six columns">
+      <%= f.label :digital %>
+      <%= f.check_box :digital %>
+    </div>
+
+    <div class="six columns">
+      <%= f.label :cut %>
+      <%= f.check_box :cut %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="row">
+    <div class="twelve columns divider">
+      <h3>Category</h3>
+    </div>
   </div>
+  <div class="row">
+    <div class="twelve columns">
+      <%= f.select :category, Pattern.TYPES.sort.collect { |p| [ p, p ] }, {prompt: true}, {class: 'u-full-width'} %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="twelve columns divider">
+      <h3>Boom!</h3>
+    </div>
+  </div>
+  <%= f.submit 'Create pattern', class: 'button-primary u-full-width' %>
 <% end %>

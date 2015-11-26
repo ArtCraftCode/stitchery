@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151126192452) do
+ActiveRecord::Schema.define(version: 20151126202150) do
 
   create_table "patterns", force: :cascade do |t|
     t.string   "name"
     t.boolean  "digital"
     t.boolean  "cut"
-    t.string   "type"
+    t.string   "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
