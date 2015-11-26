@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @pattern.name %>
+</p>
+
+<p>
+  <strong>Digital:</strong>
+  <%= @pattern.digital %>
+</p>
+
+<p>
+  <strong>Cut:</strong>
+  <%= @pattern.cut %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @pattern.type %>
+</p>
+
+<%= link_to 'Edit', edit_pattern_path(@pattern) %> |
+<%= link_to 'Back', patterns_path %>
