@@ -1,6 +1,6 @@
 module ApplicationHelper
   def pretty(float)
-    return '' unless float
+    return '--' unless float
     whole = float.to_i
     remainder = float - whole
     if remainder < 0.1
