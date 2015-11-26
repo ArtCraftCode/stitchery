@@ -4,7 +4,7 @@ class PatternsController < ApplicationController
   # GET /patterns
   # GET /patterns.json
   def index
-    @patterns = Pattern.all
+    @patterns = Pattern.all.order(:name)
   end
 
   # GET /patterns/1
