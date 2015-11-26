@@ -42,7 +42,7 @@ class VariantsController < ApplicationController
   def update
     respond_to do |format|
       if @variant.update(variant_params)
-        format.html { redirect_to @pattern.variant, notice: 'Variant was successfully updated.' }
+        format.html { redirect_to @variant.pattern, notice: 'Variant was successfully updated.' }
         format.json { render :show, status: :ok, location: @variant }
       else
         format.html { render :edit }
