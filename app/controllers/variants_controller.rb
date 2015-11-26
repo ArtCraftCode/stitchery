@@ -28,7 +28,7 @@ class VariantsController < ApplicationController
 
     respond_to do |format|
       if @variant.save
-        format.html { redirect_to @variant, notice: 'Variant was successfully created.' }
+        format.html { redirect_to @variant.pattern, notice: 'Variant was successfully created.' }
         format.json { render :show, status: :created, location: @variant }
       else
         format.html { render :new }
@@ -69,6 +69,6 @@ class VariantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def variant_params
-      params.require(:variant).permit(:size, :pattern_id, :44, :54, :60, :bust, :waist, :hips)
+      params.require(:variant).permit(:size, :pattern_id, :yardage_44, :yardage_54, :yardage_60, :bust, :waist, :hips)
     end
 end

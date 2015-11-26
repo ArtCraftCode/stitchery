@@ -7,8 +7,35 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="container">
+    <div class="row">
+      <div class="twelve columns header">
+        <h1>Stitchery Pattern Inventory</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="two columns nav">
+        <ul>
+          <li>
+            <strong>Menu</strong>
+          </li>
+          <li>
+            <%= link_to 'New pattern', new_pattern_path %>
+          </li>
+          <li>
+            <%= link_to 'Pattern library', patterns_path %>
+          </li>
+          <li>
+            <%= link_to 'New variant', new_variant_path %>
+          </li>
+        </ul>
+      </div>
+      <div class="ten columns">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
 
-<%= yield %>
 
 </body>
 </html>
