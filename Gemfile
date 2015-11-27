@@ -5,8 +5,6 @@ ruby '2.1.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 
-gem 'newrelic_rpm'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -25,6 +23,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'pg'
 
 gem 'rack-wwwhisper', '~> 1.0'
+
+gem 'rails_12factor'
+gem 'newrelic_rpm'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
