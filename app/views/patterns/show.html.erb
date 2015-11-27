@@ -109,9 +109,9 @@
               <td></td>
               <td></td>
               <td><strong class="u-pull-right">Measurement</strong></td>
-              <td><%= variant.measurement.bust %></td>
-              <td><%= variant.measurement.waist %></td>
-              <td><%= variant.measurement.hips %></td>
+              <td><%= pretty(variant.measurement.bust).html_safe %></td>
+              <td><%= pretty(variant.measurement.waist).html_safe %></td>
+              <td><%= pretty(variant.measurement.hips).html_safe %></td>
               <td colspan="2">
                 <%= link_to variant.measurement do %>
                   <i class="fa fa-external-link"></i>
@@ -125,9 +125,9 @@
               <td></td>
               <td></td>
               <td><strong class="u-pull-right">Size</strong></td>
-              <td><%= variant.size.bust %></td>
-              <td><%= variant.size.waist %></td>
-              <td><%= variant.size.hips %></td>
+              <td><%= pretty(variant.size.bust).html_safe %></td>
+              <td><%= pretty(variant.size.waist).html_safe %></td>
+              <td><%= pretty(variant.size.hips).html_safe %></td>
               <td colspan="2">
                 <%= link_to variant.size do %>
                   <i class="fa fa-external-link"></i>
