@@ -36,7 +36,7 @@
 <div class="divider">
   
   <h3>Variants</h3>
-  <% @pattern.variants.each do |variant| %>
+  <% @pattern.variants.order(:name).each do |variant| %>
 
   <div class="clear-divider">
     <h4>
