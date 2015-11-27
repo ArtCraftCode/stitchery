@@ -38,26 +38,26 @@
     <% end %>
   </thead>
   <tbody>
-    <td><%= @measurement.bust %></td>
-    <td><%= @measurement.waist %></td>
-    <td><%= @measurement.hips %></td>
+    <td><%= pretty(@measurement.bust).html_safe %></td>
+    <td><%= pretty(@measurement.waist).html_safe %></td>
+    <td><%= pretty(@measurement.hips).html_safe %></td>
     <% if @measurement.inseam && @measurement.inseam > 0 %>
-      <td><%= @measurement.inseam %></td>
+      <td><%= pretty(@measurement.inseam).html_safe %></td>
     <% end %>
     <% if @measurement.neck_to_waist && @measurement.neck_to_waist > 0 %>
-      <td><%= @measurement.neck_to_waist %></td>
+      <td><%= pretty(@measurement.neck_to_waist).html_safe %></td>
     <% end %>
     <% if @measurement.nape_to_waist && @measurement.nape_to_waist > 0 %>
-      <td><%= @measurement.nape_to_waist %></td>
+      <td><%= pretty(@measurement.nape_to_waist).html_safe %></td>
     <% end %>
     <% if @measurement.armpit_to_waist && @measurement.armpit_to_waist > 0 %>
-      <td><%= @measurement.armpit_to_waist %></td>
+      <td><%= pretty(@measurement.armpit_to_waist).html_safe %></td>
     <% end %>
     <% if @measurement.upper_back && @measurement.upper_back > 0 %>
-      <td><%= @measurement.upper_back %></td>
+      <td><%= pretty(@measurement.upper_back).html_safe %></td>
     <% end %>
     <% if @measurement.shoulder_rise && @measurement.shoulder_rise > 0 %>
-      <td><%= @measurement.shoulder_rise %></td>
+      <td><%= pretty(@measurement.shoulder_rise).html_safe %></td>
     <% end %>
   </tbody>
 </table>
