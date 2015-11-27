@@ -18,19 +18,22 @@
     <th>Bust</th>
     <th>Waist</th>
     <th>Hips</th>
-     <% if @measurement.neck_to_waist %> 
+    <% if @measurement.inseam && @measurement.inseam  > 0%> 
+      <th>Inseam</th>
+    <% end %>
+    <% if @measurement.neck_to_waist && @measurement.neck_to_waist  > 0%> 
       <th>Neck to waist</th>
     <% end %>
-     <% if @measurement.nape_to_waist %> 
+    <% if @measurement.nape_to_waist && @measurement.nape_to_waist  > 0%> 
       <th>Nape to waist</th>
     <% end %>
-     <% if @measurement.armpit_to_waist %> 
+    <% if @measurement.armpit_to_waist && @measurement.armpit_to_waist  > 0%> 
       <th>Armpit to waist</th>
     <% end %>
-     <% if @measurement.upper_back %> 
+    <% if @measurement.upper_back && @measurement.upper_back  > 0%> 
       <th>Upper back</th>
     <% end %>
-     <% if @measurement.shoulder_rise %> 
+    <% if @measurement.shoulder_rise && @measurement.shoulder_rise  > 0%> 
       <th>Shoulder rise</th>
     <% end %>
   </thead>
@@ -38,19 +41,22 @@
     <td><%= @measurement.bust %></td>
     <td><%= @measurement.waist %></td>
     <td><%= @measurement.hips %></td>
-    <% if @measurement.neck_to_waist %>
+    <% if @measurement.inseam && @measurement.inseam > 0 %>
+      <td><%= @measurement.inseam %></td>
+    <% end %>
+    <% if @measurement.neck_to_waist && @measurement.neck_to_waist > 0 %>
       <td><%= @measurement.neck_to_waist %></td>
     <% end %>
-    <% if @measurement.nape_to_waist %>
+    <% if @measurement.nape_to_waist && @measurement.nape_to_waist > 0 %>
       <td><%= @measurement.nape_to_waist %></td>
     <% end %>
-    <% if @measurement.armpit_to_waist %>
+    <% if @measurement.armpit_to_waist && @measurement.armpit_to_waist > 0 %>
       <td><%= @measurement.armpit_to_waist %></td>
     <% end %>
-    <% if @measurement.upper_back %>
+    <% if @measurement.upper_back && @measurement.upper_back > 0 %>
       <td><%= @measurement.upper_back %></td>
     <% end %>
-    <% if @measurement.shoulder_rise %>
+    <% if @measurement.shoulder_rise && @measurement.shoulder_rise > 0 %>
       <td><%= @measurement.shoulder_rise %></td>
     <% end %>
   </tbody>

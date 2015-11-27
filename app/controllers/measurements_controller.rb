@@ -69,6 +69,6 @@ class MeasurementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def measurement_params
-      params.require(:measurement).permit(:neck_to_waist, :nape_to_waist, :armpit_to_waist, :upper_back, :shoulder_rise, :waist, :bust, :hips, :name)
+      params.require(:measurement).permit(:neck_to_waist, :nape_to_waist, :armpit_to_waist, :upper_back, :shoulder_rise, :waist, :bust, :hips, :name, :inseam)
     end
 end

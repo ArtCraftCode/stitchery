@@ -50,6 +50,20 @@
   </div>
   <div class="row">
     <div class="four columns">
+      <%= f.label :inseam %>
+      <%= f.number_field :inseam, class: 'u-full-width', step: 'any' %>
+    </div>
+    <div class="four columns">
+      <%= f.label :upper_back %>
+      <%= f.number_field :upper_back, class: 'u-full-width', step: 'any' %>
+    </div>
+    <div class="four columns">
+      <%= f.label :shoulder_rise %>
+      <%= f.number_field :shoulder_rise, class: 'u-full-width', step: 'any' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="four columns">
       <%= f.label :neck_to_waist %>
       <%= f.number_field :neck_to_waist, class: 'u-full-width', step: 'any' %>
     </div>
@@ -61,17 +75,6 @@
       <%= f.label :armpit_to_waist %>
       <%= f.number_field :armpit_to_waist, class: 'u-full-width', step: 'any' %>
     </div>
-  </div>
-  <div class="row">
-    <div class="four columns">
-      <%= f.label :upper_back %>
-      <%= f.number_field :upper_back, class: 'u-full-width', step: 'any' %>
-    </div>
-    <div class="four columns">
-      <%= f.label :shoulder_rise %>
-      <%= f.number_field :shoulder_rise, class: 'u-full-width', step: 'any' %>
-    </div>
-    <div class="four columns"></div>
   </div>
 
   <div class="row">
