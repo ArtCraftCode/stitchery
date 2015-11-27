@@ -2,6 +2,11 @@
 
 <h2>
   <%= @size.name %>
+  <div class="u-pull-right icon-list">
+    <%= link_to edit_size_path(@size) do %>
+      <i class="fa fa-pencil"></i>
+    <% end %>
+  </div>
 </h2>
 
 <table class="u-full-width">
