@@ -59,7 +59,12 @@
       <tbody>
       <% @pattern.variants.each do |variant| %>
         <tr>
-          <td><%= variant.size %></td>
+          <td>
+            <strong><%= variant.size %></strong>
+            <% if variant.measurement %>
+              [ <%= link_to variant.measurement.name, variant.measurement %> ]
+            <% end %>
+          </td>
           <td><%= pretty(variant.yardage_44).html_safe %></td>
           <td><%= pretty(variant.yardage_54).html_safe %></td>
           <td><%= pretty(variant.yardage_60).html_safe %></td>

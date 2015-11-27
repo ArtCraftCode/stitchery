@@ -22,14 +22,19 @@
     </div>
   </div>
   <div class="row">
-    <div class="six columns">
+    <div class="twelve columns">
       <%= f.label :size, 'Variant & size label' %>
       <%= f.text_field :size, class: 'u-full-width' %>
     </div>
 
+  <div class="row">
+    <div class="six columns">
+      <%= f.label :measurement_id %>
+      <%= f.collection_select(:measurement_id, Measurement.all.order(:name), :id, :name, { prompt: true }, {class: 'u-full-width'}) %>
+    </div>
     <div class="six columns">
       <%= f.label :pattern_id %>
-      <%= f.collection_select(:pattern_id, Pattern.all, :id, :name, { prompt: true }, {class: 'u-full-width'}) %>
+      <%= f.collection_select(:pattern_id, Pattern.all.order(:name), :id, :name, { prompt: true }, {class: 'u-full-width'}) %>
     </div>
   </div>
 

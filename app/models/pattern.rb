@@ -17,6 +17,6 @@ class Pattern < ActiveRecord::Base
   end
 
   def is_garment?
-    ['dress', "men's", 'pants/shorts', 'skirt', 'swimwear', 'tops', 'undergarments', 'outerwear'].include?(type)
+    ['dress', "men's", 'pants/shorts', 'skirt', 'swimwear', 'tops', 'undergarments', 'outerwear'].include?(category)
   end
 end
