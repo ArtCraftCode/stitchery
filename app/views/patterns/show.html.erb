@@ -57,8 +57,10 @@
         <tr>
           <th>44"</th>
           <th>54"</th>
-          <% if variant.yardage_60 > 0 %>
+          <% if variant.yardage_60 && variant.yardage_60 > 0 %>
             <th>60"</th>
+          <% else %>
+            <th colspan="1"></th>
           <% end %>
           <% if @pattern.is_garment? %>
             <th>Bust</th>
@@ -73,8 +75,10 @@
           <tr>
             <td><%= pretty(variant.yardage_44).html_safe %></td>
             <td><%= pretty(variant.yardage_54).html_safe %></td>
-            <% if variant.yardage_60 > 0 %>
+            <% if variant.yardage_60 && variant.yardage_60 > 0 %>
               <td><%= pretty(variant.yardage_60).html_safe %></td>
+            <% else %>
+              <td></td>
             <% end %>
             <% if @pattern.is_garment? %>
               <td><%= pretty(variant.bust).html_safe %></td>

@@ -7,10 +7,14 @@ class Variant < ActiveRecord::Base
 
   private 
   def process_size
-    if size
-      bust = size.bust
-      waist = size.waist
-      hips = size.hips
+    return if @inside_callback
+    @inside_callback = true
+    if self.size
+      self.update_attributes({
+        bust: size.bust,
+        waist: size.waist,
+        hips: size.hips
+      })
     end
   end
 end

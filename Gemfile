@@ -35,9 +35,9 @@ gem 'rack-wwwhisper', '~> 1.0'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'sqlite3'
-  gem 'byebug'
+  gem 'pry'
+  gem 'pry-nav'
 end
 
 group :development do
