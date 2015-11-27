@@ -69,6 +69,6 @@ class VariantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def variant_params
-      params.require(:variant).permit(:size, :pattern_id, :yardage_44, :yardage_54, :yardage_60, :bust, :waist, :hips, :measurement_id, :size_id)
+      params.require(:variant).permit(:label, :pattern_id, :yardage_44, :yardage_54, :yardage_60, :bust, :waist, :hips, :measurement_id, :size_id)
     end
 end
