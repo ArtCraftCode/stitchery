@@ -17,16 +17,38 @@
       <div class="two columns nav">
         <ul>
           <li>
-            <strong>Menu</strong>
+            <strong>Patterns</strong>
           </li>
           <li>
-            <%= link_to 'Pattern library', patterns_path %>
+            <%= link_to patterns_path do %>
+              <i class="fa fa-book"></i> Library
+            <% end %>
           </li>
           <li>
-            <%= link_to 'New pattern', new_pattern_path %>
+            <%= link_to new_pattern_path do %>
+              <i class="fa fa-plus"></i> Add new pattern
+            <% end %>
           </li>
           <li>
-            <%= link_to 'New variant', new_variant_path %>
+            <%= link_to new_variant_path do %>
+              <i class="fa fa-plus"></i> Add new variant
+            <% end %>
+          </li>
+        </ul>
+
+        <ul>
+          <li>
+            <strong>Measurements</strong>
+          </li>
+          <li>
+            <%= link_to measurements_path do %>
+              <i class="fa fa-book"></i> Library
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_measurement_path do %>
+              <i class="fa fa-plus"></i> Add new
+            <% end %>
           </li>
         </ul>
       </div>

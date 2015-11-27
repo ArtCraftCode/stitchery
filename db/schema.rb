@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151126213120) do
+ActiveRecord::Schema.define(version: 20151127195839) do
+
+  create_table "measurements", force: :cascade do |t|
+    t.float    "neck_to_waist"
+    t.float    "nape_to_waist"
+    t.float    "armpit_to_waist"
+    t.float    "upper_back"
+    t.float    "shoulder_rise"
+    t.float    "waist"
+    t.float    "bust"
+    t.float    "hips"
+    t.string   "name"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "patterns", force: :cascade do |t|
     t.string   "name"

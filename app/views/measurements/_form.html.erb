@@ -1,0 +1,83 @@
+<%= form_for(@measurement) do |f| %>
+  <% if @measurement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@measurement.errors.count, "error") %> prohibited this measurement from being saved:</h2>
+
+      <ul>
+      <% @measurement.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="twelve columns divider">
+      <h3>Person</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="twelve columns">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'u-full-width' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="twelve columns divider">
+      <h3>Standard measurements</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="four columns">
+      <%= f.label :bust %>
+      <%= f.number_field :bust, class: 'u-full-width', steps: 'any' %>
+    </div>
+    <div class="four columns">
+      <%= f.label :waist %>
+      <%= f.number_field :waist, class: 'u-full-width', steps: 'any' %>
+    </div>
+    <div class="four columns">
+      <%= f.label :hips %>
+      <%= f.number_field :hips, class: 'u-full-width', steps: 'any' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="twelve columns divider">
+      <h3>Additional measurements</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="four columns">
+      <%= f.label :neck_to_waist %>
+      <%= f.number_field :neck_to_waist, class: 'u-full-width', steps: 'any' %>
+    </div>
+    <div class="four columns">
+      <%= f.label :nape_to_waist %>
+      <%= f.number_field :nape_to_waist, class: 'u-full-width', steps: 'any' %>
+    </div>
+    <div class="four columns">
+      <%= f.label :armpit_to_waist %>
+      <%= f.number_field :armpit_to_waist, class: 'u-full-width', steps: 'any' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="four columns">
+      <%= f.label :upper_back %>
+      <%= f.number_field :upper_back, class: 'u-full-width', steps: 'any' %>
+    </div>
+    <div class="four columns">
+      <%= f.label :shoulder_rise %>
+      <%= f.number_field :shoulder_rise, class: 'u-full-width', steps: 'any' %>
+    </div>
+    <div class="four columns"></div>
+  </div>
+
+  <div class="row">
+    <div class="twelve columns divider">
+      <h3>Boom!</h3>
+    </div>
+  </div>
+  <%= f.submit 'Submit measurements', class: 'button-primary u-full-width' %>
+<% end %>

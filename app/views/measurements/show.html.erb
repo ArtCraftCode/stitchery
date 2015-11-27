@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<h2>
+  <%= @measurement.name %>
+    <div class="u-pull-right icon-list">
+      <%= link_to edit_measurement_path(@measurement) do %>
+        <i class="fa fa-pencil"></i>
+      <% end %>
+  </div>
+</h2>
+
+<div class="divider">
+  <h3>Measurements</h3>
+</div>
+
+<table class="u-full-width">
+  <thead>
+    <th>Bust</th>
+    <th>Waist</th>
+    <th>Hips</th>
+     <% if @measurement.neck_to_waist %> 
+      <th>Neck to waist</th>
+    <% end %>
+     <% if @measurement.nape_to_waist %> 
+      <th>Nape to waist</th>
+    <% end %>
+     <% if @measurement.armpit_to_waist %> 
+      <th>Armpit to waist</th>
+    <% end %>
+     <% if @measurement.upper_back %> 
+      <th>Upper back</th>
+    <% end %>
+     <% if @measurement.shoulder_rise %> 
+      <th>Shoulder rise</th>
+    <% end %>
+  </thead>
+  <tbody>
+    <td><%= @measurement.bust %></td>
+    <td><%= @measurement.waist %></td>
+    <td><%= @measurement.hips %></td>
+    <% if @measurement.neck_to_waist %>
+      <td><%= @measurement.neck_to_waist %></td>
+    <% end %>
+    <% if @measurement.nape_to_waist %>
+      <td><%= @measurement.nape_to_waist %></td>
+    <% end %>
+    <% if @measurement.armpit_to_waist %>
+      <td><%= @measurement.armpit_to_waist %></td>
+    <% end %>
+    <% if @measurement.upper_back %>
+      <td><%= @measurement.upper_back %></td>
+    <% end %>
+    <% if @measurement.shoulder_rise %>
+      <td><%= @measurement.shoulder_rise %></td>
+    <% end %>
+  </tbody>
+</table>
