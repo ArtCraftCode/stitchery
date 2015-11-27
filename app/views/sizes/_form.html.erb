@@ -1,0 +1,54 @@
+<%= form_for(@size) do |f| %>
+  <% if @size.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@size.errors.count, "error") %> prohibited this size from being saved:</h2>
+
+      <ul>
+      <% @size.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="twelve columns divider">
+      <h3>Name</h3>
+      <p><em>Pattern brand and size label.</em></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="twelve columns">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'u-full-width' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="twelve columns divider">
+      <h3>Sizing Measurements</h3>
+      <p><em>Floats or a preset size combo.</em></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="four columns">
+      <%= f.label :bust %>
+      <%= f.number_field :bust, class: 'u-full-width', step: 'any' %>
+    </div>
+    <div class="four columns">
+      <%= f.label :waist %>
+      <%= f.number_field :waist, class: 'u-full-width', step: 'any' %>
+    </div>
+    <div class="four columns">
+      <%= f.label :hips %>
+      <%= f.number_field :hips, class: 'u-full-width', step: 'any' %>      
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="twelve columns divider">
+      <h3>Boom!</h3>
+    </div>
+  </div>
+  <%= f.submit 'Submit size', class: 'button-primary u-full-width' %>
+<% end %>

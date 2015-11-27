@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151127203014) do
+ActiveRecord::Schema.define(version: 20151127205648) do
 
   create_table "measurements", force: :cascade do |t|
     t.float    "neck_to_waist"
@@ -38,8 +38,17 @@ ActiveRecord::Schema.define(version: 20151127203014) do
     t.string   "fabrics"
   end
 
+  create_table "sizes", force: :cascade do |t|
+    t.string   "name"
+    t.float    "bust"
+    t.float    "waist"
+    t.float    "hips"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "variants", force: :cascade do |t|
-    t.string   "size"
+    t.string   "label"
     t.integer  "pattern_id"
     t.float    "yardage_44"
     t.float    "yardage_54"
@@ -50,9 +59,11 @@ ActiveRecord::Schema.define(version: 20151127203014) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.integer  "measurement_id"
+    t.integer  "size_id"
   end
 
   add_index "variants", ["measurement_id"], name: "index_variants_on_measurement_id"
   add_index "variants", ["pattern_id"], name: "index_variants_on_pattern_id"
+  add_index "variants", ["size_id"], name: "index_variants_on_size_id"
 
 end

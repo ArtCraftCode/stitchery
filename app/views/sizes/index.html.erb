@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Listing Sizes</h2>
+
+<table class="u-full-width">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Bust</th>
+      <th>Waist</th>
+      <th>Hips</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sizes.each do |size| %>
+      <tr>
+        <td><%= size.name %></td>
+        <td><%= size.bust %></td>
+        <td><%= size.waist %></td>
+        <td><%= size.hips %></td>
+        <td>
+          <%= link_to edit_size_path(size) do %>
+            <i class="fa fa-pencil"></i>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to size, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <i class="fa fa-trash"></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

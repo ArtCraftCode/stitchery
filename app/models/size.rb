@@ -1,4 +1,4 @@
-class Measurement < ActiveRecord::Base
+class Size < ActiveRecord::Base
   has_many :variants
 
   def label

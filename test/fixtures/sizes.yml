@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  bust: 1.5
+  waist: 1.5
+  hips: 1.5
+
+two:
+  name: MyString
+  bust: 1.5
+  waist: 1.5
+  hips: 1.5

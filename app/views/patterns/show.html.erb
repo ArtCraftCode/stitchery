@@ -3,6 +3,9 @@
 <h2>
   <%= @pattern.name %>
   <div class="u-pull-right icon-list">
+    <em>
+      <%= @pattern.category %>
+    </em>
     <% if @pattern.digital %>
       <i class="fa fa-files-o"></i>
     <% end %>
@@ -14,12 +17,6 @@
     <% end %>
   </div>
 </h2>
-
-<p>
-  <em>
-    <%= @pattern.category %>
-  </em>
-</p>
 
 <% if @pattern.fabrics %>
   <div class="divider">
@@ -36,55 +33,99 @@
 <% end %>
 
 <% if @pattern.variants %> 
-  <div class="divider">
-    <h3>Variants</h3>
-  </div>
+<div class="divider">
+  
+  <h3>Variants</h3>
+  <% @pattern.variants.each do |variant| %>
 
-  <table class="u-full-width">
-    <thead>
-      <tr>
-        <th>Label</th>
-        <th>44"</th>
-        <th>54"</th>
-        <th>60"</th>
-        <% if @pattern.is_garment? %>
-          <th>Bust</th>
-          <th>Waist</th>
-          <th>Hips</th>
+  <div class="clear-divider">
+    <h4>
+      <%= variant.label %>
+      <div class="u-pull-right">
+        <% if variant.measurement %>
+          <%= link_to variant.measurement.name, variant.measurement, class: 'button' %>
         <% end %>
-        <th colspan="2">Actions</th>
-      </tr>
-    </thead>
+        <% if variant.size %>
+          <%= link_to variant.size.name, variant.size, class: 'button' %>
+        <% end %>
+      </div>
+    </h4>
 
-      <tbody>
-      <% @pattern.variants.each do |variant| %>
+      
+    <table class="u-full-width">
+      <thead>
         <tr>
-          <td>
-            <strong><%= variant.size %></strong>
-            <% if variant.measurement %>
-              [ <%= link_to variant.measurement.name, variant.measurement %> ]
-            <% end %>
-          </td>
-          <td><%= pretty(variant.yardage_44).html_safe %></td>
-          <td><%= pretty(variant.yardage_54).html_safe %></td>
-          <td><%= pretty(variant.yardage_60).html_safe %></td>
-          <% if @pattern.is_garment? %>
-            <td><%= pretty(variant.bust).html_safe %></td>
-            <td><%= pretty(variant.waist).html_safe %></td>
-            <td><%= pretty(variant.hips).html_safe %></td>
+          <th>44"</th>
+          <th>54"</th>
+          <% if variant.yardage_60 > 0 %>
+            <th>60"</th>
           <% end %>
-          <td>
-            <%= link_to edit_variant_path(variant) do %>
-              <i class="fa fa-pencil"></i>
-            <% end %>
-          </td>
-          <td>
-            <%= link_to variant, method: :delete, data: { confirm: 'Are you sure?' } do %>
-              <i class="fa fa-trash"></i>
-            <% end %>
-          </td>
+          <% if @pattern.is_garment? %>
+            <th>Bust</th>
+            <th>Waist</th>
+            <th>Hips</th>
+          <% end %>
+          <th colspan="2">Actions</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+
+        <tbody>
+          <tr>
+            <td><%= pretty(variant.yardage_44).html_safe %></td>
+            <td><%= pretty(variant.yardage_54).html_safe %></td>
+            <% if variant.yardage_60 > 0 %>
+              <td><%= pretty(variant.yardage_60).html_safe %></td>
+            <% end %>
+            <% if @pattern.is_garment? %>
+              <td><%= pretty(variant.bust).html_safe %></td>
+              <td><%= pretty(variant.waist).html_safe %></td>
+              <td><%= pretty(variant.hips).html_safe %></td>
+            <% end %>
+            <td>
+              <%= link_to edit_variant_path(variant) do %>
+                <i class="fa fa-pencil"></i>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to variant, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <i class="fa fa-trash"></i>
+              <% end %>
+            </td>
+          </tr>
+          <% if variant.measurement %>
+            <tr>
+              <td></td>
+              <td></td>
+              <td><strong class="u-pull-right">Measurement</strong></td>
+              <td><%= variant.measurement.bust %></td>
+              <td><%= variant.measurement.waist %></td>
+              <td><%= variant.measurement.hips %></td>
+              <td colspan="2">
+                <%= link_to variant.measurement do %>
+                  <i class="fa fa-external-link"></i>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+
+          <% if variant.size %>
+            <tr>
+              <td></td>
+              <td></td>
+              <td><strong class="u-pull-right">Size</strong></td>
+              <td><%= variant.size.bust %></td>
+              <td><%= variant.size.waist %></td>
+              <td><%= variant.size.hips %></td>
+              <td colspan="2">
+                <%= link_to variant.size do %>
+                  <i class="fa fa-external-link"></i>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+      </tbody>
+    </table>
+    <% end %>
+  </div>
 <% end %>
+</div>
